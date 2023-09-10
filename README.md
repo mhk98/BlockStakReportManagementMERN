@@ -45,19 +45,10 @@ Follow these steps to run and test the project:
    DELETE /api/v1/report/:id: Delete a report.
    PUT /api/v1/report/:id: Delete a report.
 
-8. JSON data for Create a new user
-   ```json
-   {
-   "Name":"Mohsin",
-   "Email":"test123@gmail.com",
-   "Password":"test@123",
-   "Phone":"01518301096",
-   "Address":"Dhaka",
-   "Profession":"Engineer",
-   "Favorite_colors":"Black"
-   }
-````
-8. JSON data for Create a new user
+#### JSON Data for Creating a New Report
+
+To create a new report, send a POST request with the following JSON data:
+
    ```json
    {
    "Name":"Mohsin",
@@ -70,6 +61,17 @@ Follow these steps to run and test the project:
    }
 ````
 
-  
+#### JSON Data for Creating a New Report
 
+To create a new report, send a POST request with the following JSON data:
+
+```json
+{
+  "Name": "Mohsin",
+  "Email": "mohsinkabir2017@gmail.com",
+  "Phone": "01518301038",
+  "Address": "Dhaka",
+  "Profession": "Engineer",
+  "Favorite_colors": "Black"
+}
 
