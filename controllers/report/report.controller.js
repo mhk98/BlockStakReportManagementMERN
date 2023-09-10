@@ -1,4 +1,3 @@
-
 const db = require("../../models");
 const { ErrorLogger } = require("../../utils/logger");
 const Report = db.report;
@@ -25,12 +24,12 @@ exports.createReport = async (req, res) => {
 
 exports.getAllReport = async (req, res) => {
   try {
-    const user = await Report.findAll();
+    const report = await Report.findAll();
 
     res.status(200).send({
       status: "Success",
       message: "Successfully got all report",
-      data: user,
+      data: report,
     });
   } catch (error) {
     ErrorLogger.error(req.originalUrl + " " + error.message);
@@ -59,7 +58,7 @@ exports.deleteReport = async (req, res) => {
     res.status(200).send({
       status: "Success",
       message: "Successfully delete your report",
-      data: user,
+      data: report,
     });
   } catch (error) {
     ErrorLogger.error(req.originalUrl + " " + error.message);
@@ -88,7 +87,7 @@ exports.updateReport = async (req, res) => {
     res.status(200).send({
       status: "Success",
       message: "Successfully update your report",
-      data: user,
+      data: report,
     });
   } catch (error) {
     ErrorLogger.error(req.originalUrl + " " + error.message);
