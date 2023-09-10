@@ -117,3 +117,12 @@ To create a new report, send a POST request with the following JSON data:
   "Favorite_colors": "Black"
 }
 
+
+
+## Facing Challenges
+
+I haven't faced any technical challenges, but I had some trouble understanding certain aspects of the task. However, I have resolved those issues by emailing you.
+
+
+
+
