@@ -34,16 +34,58 @@ Follow these steps to run and test the project:
 4. npm run dev (Run the BlockStakReportManagementMERN project server)
 5. Database: I use remote database. That's why no need to setup local mysql database environment.
 6. The server will be running at http://localhost:5000
-7. Available Endpoints
-   POST /api/v1/user/signup: Create a new user.
-   POST /api/v1/user/login: Login user.
-   GET /api/v1/user/: Get a list of users.
-   POST /api/v1/user/refresh-token/: Generate refresh token after expire token.
-   POST /api/v1/report/create-report: Create a new report.
-   GET /api/v1/report/: Get all report.
-   GET /api/v1/report/:id: Get single report.
-   DELETE /api/v1/report/:id: Delete a report.
-   PUT /api/v1/report/:id: Delete a report.
+
+
+# Blockstak Report Management
+
+Welcome to the Project Name project! This README provides information about the available API endpoints.
+
+## API Endpoints
+
+### Create a New User
+
+- **Route:** POST `/api/v1/user/signup`
+- **Description:** Create a new user.
+
+### Login User
+
+- **Route:** POST `/api/v1/user/login`
+- **Description:** Login user.
+
+### Get a List of Users
+
+- **Route:** GET `/api/v1/user/`
+- **Description:** Get a list of users.
+
+### Generate Refresh Token
+
+- **Route:** POST `/api/v1/user/refresh-token/:`
+- **Description:** Generate a refresh token after the access token expires.
+
+### Create a New Report
+
+- **Route:** POST `/api/v1/report/create-report`
+- **Description:** Create a new report.
+
+### Get All Reports
+
+- **Route:** GET `/api/v1/report/`
+- **Description:** Get all reports.
+
+### Get Single Report
+
+- **Route:** GET `/api/v1/report/:id`
+- **Description:** Get a single report by ID.
+
+### Delete a Report
+
+- **Route:** DELETE `/api/v1/report/:id`
+- **Description:** Delete a report by ID.
+
+### Update a Report
+
+- **Route:** PUT `/api/v1/report/:id`
+- **Description:** Update a report by ID.
 
 #### JSON Data for Creating a New Report
 
