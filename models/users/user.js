@@ -28,25 +28,11 @@ module.exports = (sequelize, DataTypes, Sequelize) => {
         allowNull: false,
         unique: true,
       },
-
-      Phone: {
+      Image: {
         type: DataTypes.STRING,
-        allowNull: true,
-      },
-      Address: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      Profession: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      Favorite_colors: {
-        type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
       },
 
-      // Define a 'role' field with default value 'user' and enum values ['user', 'admin']
       role: {
         type: DataTypes.STRING,
         defaultValue: "user",

@@ -7,7 +7,16 @@ const User = db.user;
 
 exports.signup = async (req, res) => {
   try {
-    //Checking exist user
+    const { Name, Email, Password } = req.body;
+    const data = {
+      Name,
+      Email,
+      Password,
+      Image: req.file.path,
+    };
+
+    console.log(req.body);
+    console.log(req.file);
     const isUserExist = await User.findOne({
       where: { Email: req.body.Email },
     });
@@ -16,15 +25,13 @@ exports.signup = async (req, res) => {
       return res.status(409).send("User already exist");
     }
 
-    const user = await User.create(req.body);
+    const user = await User.create(data);
     res.status(200).send({
       status: "Success",
       message: "Successfully signed up",
       data: user,
     });
   } catch (error) {
-    ErrorLogger.error(req.originalUrl + " " + error.message);
-
     res.status(500).json({
       status: "fail",
       message: "Username or password is not curret",
@@ -115,20 +122,23 @@ exports.login = async (req, res) => {
     }
 
     const accessToken = generateToken(user);
-    const refreshToken = generateToken(user);
+    // const refreshToken = generateToken(user);
 
     //set refresh token into cookie
     const cookieOptions = {
       secure: process.env === "production" ? true : false,
       httpOnly: true,
     };
-    res.cookie("refreshToken", refreshToken, cookieOptions);
+    // res.cookie("refreshToken", refreshToken, cookieOptions);
     res.cookie("accessToken", accessToken, cookieOptions);
-
+    const data = {
+      accessToken,
+      user,
+    };
     res.status(200).send({
       status: "Success",
       message: "Logged in successfully",
-      
+      data,
     });
   } catch (error) {
     ErrorLogger.error(req.originalUrl + " " + error.message);

@@ -26,6 +26,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+//static image folder
+app.use("/Images", express.static("Images"));
+
 // main route
 app.get("/", (req, res) => {
   res.send("Server is running");
